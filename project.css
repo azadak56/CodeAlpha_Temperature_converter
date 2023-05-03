@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #4CAF50;
+  }
+  
+  /* Set the width of the input box */
+  input[type="number"] {
+    width: 80%;
+    max-width: 300px;
+    font-size: 1.5rem;
+    padding: 8px;
+    margin: 16px 0;
+    border-radius: 8px;
+    border: 2px solid black;
+  }
+  
+  /* Style the select dropdown */
+  select {
+    font-size: 1.2rem;
+    padding: 8px;
+    margin: 16px 0;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    margin-left:10px;
+  }
+  
+  /* Set the style of the button */
+  button {
+    background-color: yellow;
+    color: black;
+    font-size: 1.2rem;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    align-items:center;
+    
+  }
+  
+  /* Style the output box */
+  #result {
+    font-size: 1.5rem;
+  
+    margin-left:60px;
+  }
+  
+  /* Add media queries for smaller screens */
+  @media screen and (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+    
+    input[type="number"] {
+      width: 100%;
+      font-size: 1.2rem;
+    }
+    
+    select {
+      font-size: 1rem;
+    }
+    
+    button {
+      font-size: 1rem;
+      padding: 8px;
+    }
+    
+    #output {
+      font-size: 2rem;
+      padding: 12px;
+      margin: 12px 0;
+    }
+  }
+  

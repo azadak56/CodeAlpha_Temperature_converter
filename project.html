@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Temperature Converter</title>
+    <link rel="stylesheet" href="project.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		function convert() {
+			// Get input values
+			let temperature = parseFloat(document.getElementById("temperature").value);
+			let fromUnit = document.getElementById("from-unit").value;
+			let toUnit = document.getElementById("to-unit").value;
+	
+			// Convert temperature
+			if (fromUnit === "celsius" && toUnit === "fahrenheit") {
+				temperature = temperature * 1.8 + 32;
+			} else if (fromUnit === "celsius" && toUnit === "kelvin") {
+				temperature = temperature + 273.15;
+			} else if (fromUnit === "fahrenheit" && toUnit === "celsius") {
+				temperature = (temperature - 32) / 1.8;
+			} else if (fromUnit === "fahrenheit" && toUnit === "kelvin") {
+				temperature = (temperature + 459.67) * 5/9;
+			} else if (fromUnit === "kelvin" && toUnit === "celsius") {
+				temperature = temperature - 273.15;
+			} else if (fromUnit === "kelvin" && toUnit === "fahrenheit") {
+				temperature = temperature * 9/5 - 459.67;
+			}
+	
+			// Display result
+			document.getElementById("result").innerHTML = temperature.toFixed(2) + " " + toUnit;
+		}
+	</script>
+</head>
+<body>
+	<center><h1>Temperature Converter</h1></center>
+	<center><p>Enter the value in a temperature and select the units to you wantr to convert</p></center>
+	<center> <form>
+		<input type="number" id="temperature" name="temperature" required><br>
+		<select id="from-unit">
+			<option value="celsius">Celsius</option>
+			<option value="fahrenheit">Fahrenheit</option>
+			<option value="kelvin">Kelvin</option>
+		</select>
+		<span>To</span>
+		<select id="to-unit">
+			<option value="fahrenheit">Fahrenheit</option>
+			<option value="celsius">Celsius</option>
+			<option value="kelvin">Kelvin</option>
+		</select><br>
+		<button type="button" onclick="convert()">Convert</button>
+	</form>
+	<p id="result"></p></center>
+</body>
+</html>
